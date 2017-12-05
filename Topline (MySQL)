@@ -9,7 +9,6 @@ SELECT
 FROM rachel_zoe_placement_device_etl
 GROUP BY (`Date`)
 
-
 SELECT
 	`date` as 'Date'
     ,SUM(`revenue (adv currency)`) as 'Spend'
@@ -20,8 +19,6 @@ SELECT
     ,`advertiser` as 'Site'    
 FROM rachel_zoe_dbm_recurring_02_10_17
 GROUP BY (`Date`)
-
-
 
 SELECT 
 	`date` AS 'Date'
@@ -34,7 +31,6 @@ SELECT
 FROM adwords_keyword_performance_recurring_03_01_17
 WHERE `AccountDescriptiveName` = "The Zoe Report Box of Style"
 GROUP BY `date`;
-
 
 select
 	`date` as 'Date'
@@ -50,6 +46,7 @@ WHERE `Activity` = 'Zoe_Order Confirmation_Sale_1.27.17' AND `SITE(DCM)` = 'Goog
 
 GROUP BY (`Date`)
 
+
 select
 	`date` as 'Date'
     ,SUM(`Total Conversions Cross Environment`) as 'Sales'
@@ -63,7 +60,6 @@ FROM rachel_zoe_x_device_recurring_2_10_17
 WHERE `Activity` = 'Zoe_Order Confirmation_Sale_1.27.17' AND `SITE(DCM)` = 'Google Display Network'
 
 GROUP BY (`Date`)
-
 
 
 SELECT
@@ -98,7 +94,6 @@ LEFT JOIN transform_data_2_dbm b
 
 ON a.`Date` = b.`Date`
 
-
 SELECT
 	 b.`Spend`
     ,b.`Impressions`
@@ -113,9 +108,7 @@ RIGHT JOIN transform_data_3_aw b
 
 ON a.`Date` = b.`Date`
 
-
 union
-
 
 SELECT 
 	 a.`Spend`
@@ -131,7 +124,6 @@ LEFT JOIN transform_data_3_aw b
 
 ON a.`Date` = b.`Date`
 
-
 SELECT
 	 b.`Spend`
     ,b.`Impressions`
@@ -146,9 +138,7 @@ RIGHT JOIN transform_data_3_dcm_dbm b
 
 ON a.`Date` = b.`Date`
 
-
 union
-
 
 SELECT 
 	 a.`Spend`
@@ -164,8 +154,6 @@ LEFT JOIN transform_data_3_dcm_dbm b
 
 ON a.`Date` = b.`Date`
 
-
-
 SELECT
 	 b.`Spend`
     ,b.`Impressions`
@@ -180,9 +168,7 @@ RIGHT JOIN transform_data_4_dcm_aw b
 
 ON a.`Date` = b.`Date`
 
-
 union
-
 
 SELECT 
 	 a.`Spend`
